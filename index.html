@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Black Background Website</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding-top: 100px;
+        }
+    </style>
+    <script>
+        function copyCode() {
+            const code = `loadstring(game:HttpGet("https://raw.githubusercontent.com/Easy99scripts/Easy-Hub/main/Easy99scripts.lua"))()`;
+            navigator.clipboard.writeText(code)
+                .then(() => {
+                    alert("Code copied successfully!");
+                })
+                .catch((error) => {
+                    console.error("Failed to copy code:", error);
+                });
+        }
+    </script>
+</head>
+<body>
+    <h1>Easy Hub</h1>
+    <button onclick="copyCode()">Click here to copy the code</button>
+    <p>Easy Hub</p>
+</body>
+</html>
