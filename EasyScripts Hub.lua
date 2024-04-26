@@ -1,1 +1,1 @@
-return loadstring(game:HttpGet("https://shz.al/CmJW8bP8WCkf24G8dcPFsanY"))()
+return loadstring(game:HttpGet("https://raw.githubusercontent.com/Easy99scripts/Teste/main/EasyHubTeste.lua.txt"))()
