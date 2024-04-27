@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Black Background Website</title>
+    <title>EasyHub Code</title>
     <style>
         body {
             background-color: black;
@@ -9,23 +9,57 @@
             text-align: center;
             padding-top: 100px;
         }
+
+        #copy-button {
+            background-color: #2196f3;
+            color: white;
+            transition: background-color 0.3s ease;
+        }
+
+        @keyframes buttonAnimation {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.2);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
     </style>
     <script>
+        function changeButtonColor() {
+            const codeButton = document.getElementById('copy-button');
+            const colors = ['#2196f3', '#4caf50', '#ff9800', '#e91e63'];
+            let currentIndex = 0;
+
+            setInterval(() => {
+                codeButton.style.backgroundColor = colors[currentIndex];
+                currentIndex = (currentIndex + 1) % colors.length;
+            }, 1000);
+        }
+
         function copyCode() {
-            const code = `loadstring(game:HttpGet("https://raw.githubusercontent.com/Easy99scripts/Easy-Hub/main/EasyScripts%20Hub.lua"))()`;
+            const codeButton = document.getElementById('copy-button');
+            codeButton.classList.add('animated');
+            const code = ` loadstring(game:HttpGet("https://raw.githubusercontent.com/Easy99scripts/Easy-Hub/main/Easy99scripts.lua"))()`;
             navigator.clipboard.writeText(code)
                 .then(() => {
                     alert("Code copied successfully!");
                 })
                 .catch((error) => {
                     console.error("Failed to copy code:", error);
+                })
+                .finally(() => {
+                    codeButton.classList.remove('animated');
                 });
         }
     </script>
 </head>
-<body>
-    <h1>Easy Hub</h1>
-    <button onclick="copyCode()">Click here to copy the code</button>
+<body onload="changeButtonColor()">
+    <h1>Easy Hub Scrips</h1>
+    <button id="copy-button" onclick="copyCode()">click on the button to copy the "Easy Hub" script</button>
     <p>Easy Hub</p>
 </body>
 </html>
